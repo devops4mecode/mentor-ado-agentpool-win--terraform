@@ -9,7 +9,7 @@
 ## Steps
 
 ### To Use
-- Change the values of parameter in "terraform.tfvars.sample" file and rename to "ado.tfvars"
+- Change the values of parameter in "terraform.tfvars.sample" file and rename to "terraform.tfvars"
 - Upload the "devops_win.ps1" file to your Azure Storage Account, create the SAS Token for the file then update SASTOKEN in main.tf.
 - Initial our Terraform script by execute command below:
 `terraform init`
