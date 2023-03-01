@@ -1,0 +1,32 @@
+
+#The name of the resource group
+resourcegroup = "ado-agent-rg"
+
+#The location of the resources
+location = "southeastasia"
+
+#The url of the Azure DevOps Organization https://dev.azure.com/[Organization]
+url = "https://dev.azure.com/[YOUR ORG NAME]"
+
+#The Personal Access Token (PAT), generate here: https://dev.azure.com/[Organization]/_usersSettings/tokens
+pat = "[TOKEN]" #full access
+
+#The name of the agent pool, https://dev.azure.com/[Organization]/_settings/agentpools?poolId=8&_a=agents
+pool = "[AGENT POOL NAME]"
+
+#The name of the agent
+agent = "ado-win-01"
+
+#The size of the vm
+size = "Standard_B1ms"
+
+#The hostname of the VM
+hostname = "ADOWinVM"
+
+#The username for the VM
+admin_username = "[USERNAME]"
+
+#The password for the VM
+admin_password = "[PASSWORD]"
+
+psfile= "devops_win.ps1"
