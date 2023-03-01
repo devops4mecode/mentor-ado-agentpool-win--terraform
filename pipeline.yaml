@@ -1,0 +1,19 @@
+name: $(BuildDefinitionName)_$(date:yyyyMMdd)$(rev:.r)
+
+pool: ADOAGENTPOOL #REPLACE WITH YOUR POOL NAME
+
+# Don't run against PRs
+pr: none
+
+stages :
+  - stage: Test
+    jobs:
+    - job: testjob
+      continueOnError: false
+      steps:
+        - task: Bash@3
+          displayName: 'Test Echo'
+          inputs:
+            targetType: inline
+            script: |
+              echo "Testing do4m-ubuntu-vm ADO Agent server"
