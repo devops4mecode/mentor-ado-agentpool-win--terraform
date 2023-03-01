@@ -120,7 +120,7 @@ resource "azurerm_virtual_machine_extension" "azuredevopsvmex" {
 
   settings = <<SETTINGS
   {
-  "fileUris": ["https://tfstraccnt.blob.core.windows.net/tf-scripts/devops_win.ps1?sp=r&st=2023-03-01T07:12:19Z&se=2023-04-30T15:12:19Z&spr=https&sv=2021-06-08&sr=b&sig=pRrf6EG82XzGAGyH1%2BDGOTxyK9o9n3b5iwbpkhPHYwE%3D"],
+  "fileUris": ["SASTOKEN"],
   "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File ./devops_win.ps1 -URL ${var.url} -PAT ${var.pat} -POOL ${var.pool} -AGENT ${var.agent}",
   "timestamp" : "12"
   }
