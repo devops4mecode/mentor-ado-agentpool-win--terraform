@@ -117,15 +117,12 @@ resource "azurerm_virtual_machine_extension" "azuredevopsvmex" {
   publisher            = "Microsoft.Compute"
   type                 = "CustomScriptExtension"
   type_handler_version = "1.9"
-
   settings = <<SETTINGS
   {
-  "fileUris": ["SASTOKEN"],
+  "fileUris": ["https://raw.githubusercontent.com/devops4mecode/mentor-ado-agentpool-win-terraform/master/ps_scripts/devops_win.ps1"],
   "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted -File ./devops_win.ps1 -URL ${var.url} -PAT ${var.pat} -POOL ${var.pool} -AGENT ${var.agent}",
   "timestamp" : "12"
   }
-SETTINGS
-
-
+  SETTINGS
 }
 

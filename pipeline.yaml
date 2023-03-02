@@ -1,19 +1,10 @@
-name: $(BuildDefinitionName)_$(date:yyyyMMdd)$(rev:.r)
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
 
 pool: ADOAGENTPOOL #REPLACE WITH YOUR POOL NAME
 
-# Don't run against PRs
-pr: none
-
-stages :
-  - stage: Test
-    jobs:
-    - job: testjob
-      continueOnError: false
-      steps:
-        - task: Bash@3
-          displayName: 'Test Echo'
-          inputs:
-            targetType: inline
-            script: |
-              echo "Testing do4m-ubuntu-vm ADO Agent server"
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "$(Build.BuildNumber)"
